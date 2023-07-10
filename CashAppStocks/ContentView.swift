@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var viewModel = StockViewModel()
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        if viewModel.stocks.isEmpty {
+            ProgressView()
+        } else {
+            List(viewModel.stocks){ stock in
+                VStack{
+                    Text(stock.ticker)
+                }
+            }
         }
-        .padding()
     }
 }
 

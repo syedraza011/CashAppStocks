@@ -17,6 +17,7 @@
 		E92925FD2A5C5B0000BB5412 /* StcokService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92925FC2A5C5B0000BB5412 /* StcokService.swift */; };
 		E92925FF2A5C5C0500BB5412 /* StockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92925FE2A5C5C0500BB5412 /* StockViewModel.swift */; };
 		E92926012A5C60B300BB5412 /* StockResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92926002A5C60B300BB5412 /* StockResponse.swift */; };
+		E92926032A5C6F9800BB5412 /* StockDataJson.json in Sources */ = {isa = PBXBuildFile; fileRef = E92926022A5C6F9800BB5412 /* StockDataJson.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		E92925FC2A5C5B0000BB5412 /* StcokService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StcokService.swift; sourceTree = "<group>"; };
 		E92925FE2A5C5C0500BB5412 /* StockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewModel.swift; sourceTree = "<group>"; };
 		E92926002A5C60B300BB5412 /* StockResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockResponse.swift; sourceTree = "<group>"; };
+		E92926022A5C6F9800BB5412 /* StockDataJson.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StockDataJson.json; sourceTree = "<group>"; };
+		E92926042A5C74C900BB5412 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,7 @@
 		E92925CE2A5C57A800BB5412 /* CashAppStocks */ = {
 			isa = PBXGroup;
 			children = (
+				E92926042A5C74C900BB5412 /* Info.plist */,
 				E92925D12A5C57A800BB5412 /* ContentView.swift */,
 				E92925F92A5C588C00BB5412 /* View */,
 				E92925FB2A5C58F000BB5412 /* New Group */,
@@ -107,6 +111,7 @@
 				E92925CF2A5C57A800BB5412 /* CashAppStocksApp.swift */,
 				E92925D32A5C57AB00BB5412 /* Assets.xcassets */,
 				E92925D52A5C57AB00BB5412 /* Preview Content */,
+				E92926022A5C6F9800BB5412 /* StockDataJson.json */,
 			);
 			path = CashAppStocks;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 				E92925D02A5C57A800BB5412 /* CashAppStocksApp.swift in Sources */,
 				E92925FD2A5C5B0000BB5412 /* StcokService.swift in Sources */,
 				E92926012A5C60B300BB5412 /* StockResponse.swift in Sources */,
+				E92926032A5C6F9800BB5412 /* StockDataJson.json in Sources */,
 				E92925FF2A5C5C0500BB5412 /* StockViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,7 +462,7 @@
 				DEVELOPMENT_TEAM = G9Z86K3593;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = CashAppStocks/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -485,7 +491,7 @@
 				DEVELOPMENT_TEAM = G9Z86K3593;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = CashAppStocks/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
