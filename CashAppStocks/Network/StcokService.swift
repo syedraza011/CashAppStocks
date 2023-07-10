@@ -16,6 +16,7 @@ enum APIError: Error {
 }
 
 class StockService {
+    
     struct Constants {
         static let baseURL = "https://storage.googleapis.com/cash-homework/cash-stocks-api/portfolio.json"
     }
