@@ -14,6 +14,9 @@
 		E92925E12A5C57AC00BB5412 /* CashAppStocksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92925E02A5C57AC00BB5412 /* CashAppStocksTests.swift */; };
 		E92925EB2A5C57AC00BB5412 /* CashAppStocksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92925EA2A5C57AC00BB5412 /* CashAppStocksUITests.swift */; };
 		E92925ED2A5C57AC00BB5412 /* CashAppStocksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92925EC2A5C57AC00BB5412 /* CashAppStocksUITestsLaunchTests.swift */; };
+		E92925FD2A5C5B0000BB5412 /* StcokService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92925FC2A5C5B0000BB5412 /* StcokService.swift */; };
+		E92925FF2A5C5C0500BB5412 /* StockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92925FE2A5C5C0500BB5412 /* StockViewModel.swift */; };
+		E92926012A5C60B300BB5412 /* StockResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92926002A5C60B300BB5412 /* StockResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		E92925E62A5C57AC00BB5412 /* CashAppStocksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CashAppStocksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92925EA2A5C57AC00BB5412 /* CashAppStocksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashAppStocksUITests.swift; sourceTree = "<group>"; };
 		E92925EC2A5C57AC00BB5412 /* CashAppStocksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashAppStocksUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E92925FC2A5C5B0000BB5412 /* StcokService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StcokService.swift; sourceTree = "<group>"; };
+		E92925FE2A5C5C0500BB5412 /* StockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewModel.swift; sourceTree = "<group>"; };
+		E92926002A5C60B300BB5412 /* StockResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +100,11 @@
 		E92925CE2A5C57A800BB5412 /* CashAppStocks */ = {
 			isa = PBXGroup;
 			children = (
-				E92925CF2A5C57A800BB5412 /* CashAppStocksApp.swift */,
 				E92925D12A5C57A800BB5412 /* ContentView.swift */,
+				E92925F92A5C588C00BB5412 /* View */,
+				E92925FB2A5C58F000BB5412 /* New Group */,
+				E92925FA2A5C589900BB5412 /* Network */,
+				E92925CF2A5C57A800BB5412 /* CashAppStocksApp.swift */,
 				E92925D32A5C57AB00BB5412 /* Assets.xcassets */,
 				E92925D52A5C57AB00BB5412 /* Preview Content */,
 			);
@@ -125,6 +134,30 @@
 				E92925EC2A5C57AC00BB5412 /* CashAppStocksUITestsLaunchTests.swift */,
 			);
 			path = CashAppStocksUITests;
+			sourceTree = "<group>";
+		};
+		E92925F92A5C588C00BB5412 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E92925FA2A5C589900BB5412 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E92925FC2A5C5B0000BB5412 /* StcokService.swift */,
+				E92925FE2A5C5C0500BB5412 /* StockViewModel.swift */,
+				E92926002A5C60B300BB5412 /* StockResponse.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E92925FB2A5C58F000BB5412 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +292,9 @@
 			files = (
 				E92925D22A5C57A800BB5412 /* ContentView.swift in Sources */,
 				E92925D02A5C57A800BB5412 /* CashAppStocksApp.swift in Sources */,
+				E92925FD2A5C5B0000BB5412 /* StcokService.swift in Sources */,
+				E92926012A5C60B300BB5412 /* StockResponse.swift in Sources */,
+				E92925FF2A5C5C0500BB5412 /* StockViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
