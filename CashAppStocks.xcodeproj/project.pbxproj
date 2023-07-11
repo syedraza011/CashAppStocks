@@ -18,6 +18,7 @@
 		E92925FF2A5C5C0500BB5412 /* StockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92925FE2A5C5C0500BB5412 /* StockViewModel.swift */; };
 		E92926012A5C60B300BB5412 /* StockResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92926002A5C60B300BB5412 /* StockResponse.swift */; };
 		E929260E2A5C9F6900BB5412 /* StockDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E929260D2A5C9F6900BB5412 /* StockDetailsView.swift */; };
+		E92926142A5CC45800BB5412 /* TimeFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92926132A5CC45800BB5412 /* TimeFixture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		E92926002A5C60B300BB5412 /* StockResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockResponse.swift; sourceTree = "<group>"; };
 		E92926042A5C74C900BB5412 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E929260D2A5C9F6900BB5412 /* StockDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StockDetailsView.swift; path = ../../../../../Downloads/StockDetailsView.swift; sourceTree = "<group>"; };
+		E92926132A5CC45800BB5412 /* TimeFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFixture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				E92925FE2A5C5C0500BB5412 /* StockViewModel.swift */,
 				E92926002A5C60B300BB5412 /* StockResponse.swift */,
 				E929260D2A5C9F6900BB5412 /* StockDetailsView.swift */,
+				E92926132A5CC45800BB5412 /* TimeFixture.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				E929260E2A5C9F6900BB5412 /* StockDetailsView.swift in Sources */,
 				E92925FD2A5C5B0000BB5412 /* StcokService.swift in Sources */,
 				E92926012A5C60B300BB5412 /* StockResponse.swift in Sources */,
+				E92926142A5CC45800BB5412 /* TimeFixture.swift in Sources */,
 				E92925FF2A5C5C0500BB5412 /* StockViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
