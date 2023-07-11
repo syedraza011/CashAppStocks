@@ -6,9 +6,6 @@
 
 import Foundation
 
-//struct StockResponse: Decodable {
-//    let data: Stocks
-//}
 
 struct StockResponse: Decodable {
     let stocks: [Stock]
