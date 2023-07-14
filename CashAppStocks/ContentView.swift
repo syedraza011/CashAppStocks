@@ -7,16 +7,19 @@
 
 import SwiftUI
 import Combine
+
+
+enum SortOption {
+    case name
+    case ticker
+    case current_price_cents
+}
+
 struct ContentView: View {
     @StateObject var viewModel = StockViewModel()
     @State private var searchText = ""
     @State private var sortOption: SortOption = .name
-    
-    enum SortOption {
-        case name
-        case ticker
-        case current_price_cents
-    }
+   
     
     var body: some View {
         NavigationView {
@@ -66,7 +69,7 @@ struct ContentView: View {
             viewModel.getStocks()
         }
     }
-    
+
     var homeButton: some View {
         Button(action: {
             // Handle home button action
@@ -75,7 +78,7 @@ struct ContentView: View {
                 .foregroundColor(.black)
         }
     }
-    
+
     var sortButton: some View {
         Menu {
             Button(action: {
@@ -98,7 +101,7 @@ struct ContentView: View {
                 .foregroundColor(.black)
         }
     }
-    
+
     var filteredStocks: [Stock] {
         var filtered = viewModel.stocks
         if !searchText.isEmpty {
@@ -108,7 +111,7 @@ struct ContentView: View {
                     formatPriceCents(stock.current_price_cents).localizedCaseInsensitiveContains(searchText)
             }
         }
-        
+
         switch sortOption {
         case .name:
             filtered.sort { $0.name < $1.name }
@@ -117,12 +120,13 @@ struct ContentView: View {
         case .current_price_cents:
             filtered.sort { $0.current_price_cents < $1.current_price_cents }
         }
-        
+
         return filtered
     }
-    
-  
 }
+
+
+
 
 
 

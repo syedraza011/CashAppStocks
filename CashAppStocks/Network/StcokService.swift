@@ -19,6 +19,7 @@ class StockService {
     
     struct Constants {
         static let baseURL = "https://storage.googleapis.com/cash-homework/cash-stocks-api/portfolio.json"
+//        static let baseURL = "https://storage.googleapis.com/cash-homework/cash-stocks-api/portfolio_empty.json"
     }
 
     func fetchStocks() async throws -> [Stock] {
