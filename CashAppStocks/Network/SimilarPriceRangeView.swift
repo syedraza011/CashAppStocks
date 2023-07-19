@@ -8,8 +8,11 @@
 import Foundation
 //
 //class SimilarPriceRangeView: ObservableObject {
-//    @Published var relatedItems: [StockData] = []
-//    private let stockService: StockService = StockService()
+//    @EnvironmentObject var stockViewModel: StockViewModel
+//    let stock: Stock
+//    private let stockService: StockService = StockService() // Placeholder stock service instance
+//
+//    @Published var relatedItems: [Stock] = []
 //
 //    func getRelatedItemsFromParent(_ parentStock: Stock) {
 //        var relatedItems: Set<String> = []
@@ -18,7 +21,7 @@ import Foundation
 //                continue
 //            }
 //            for price in prices {
-//                relatedItems.insert(price.current_price_cents)
+//                relatedItems.insert(price)
 //            }
 //        }
 //        relatedItems.remove(parentStock.id)
@@ -29,3 +32,5 @@ import Foundation
 //        }
 //    }
 //}
+
+

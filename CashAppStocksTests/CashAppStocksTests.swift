@@ -18,6 +18,37 @@ final class CashAppStocksTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+    func test_getPostsAsyncAwait_should_succeed() async throws {
+        let viewModel = StockViewModel(service: MockPostsService(fileName: .stockSuccess))
+        
+        // Expectation: The sectionPosts should be populated correctly
+        // Set up any necessary mock objects or data
+        let expectation = XCTestExpectation(description: "Posts fetched successfully")
+        
+        // Call the function being tested
+        await viewModel.getPostsAsyncAwait()
+        
+        // Assert the expected results
+        viewModel.$sectionPosts
+            .dropFirst() // Skip initial value
+            .sink { sectionPosts in
+                // Perform your assertions on the sectionPosts here
+                XCTAssertFalse(sectionPosts.isEmpty, "sectionPosts should not be empty")
+                let firstSection = sectionPosts.first!
+                XCTAssertEqual(firstSection.posts.first!.title, "sunt aut facere repellat provident occaecati excepturi optio reprehenderit")
+                // Fulfill the expectation
+                expectation.fulfill()
+            }
+            .store(in: &cancellables)
+        
+        // Wait for the expectation to be fuzMoclfilled
+        await fulfillment(of: [expectation], timeout: 5)
+    }
+    
+    
+    
+    
+    
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
@@ -33,4 +64,11 @@ final class CashAppStocksTests: XCTestCase {
         }
     }
 
+}
+class MockStockService: StockServiceProtocol {
+    let fileName: FileName
+    init(fileName: FileName) {
+        self.fileName = fileName
+    }
+    private fetchStocksusingAsyncAwait () async throws - > []
 }

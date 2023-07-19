@@ -20,6 +20,13 @@
 		E929260E2A5C9F6900BB5412 /* StockDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E929260D2A5C9F6900BB5412 /* StockDetailsView.swift */; };
 		E92926142A5CC45800BB5412 /* TimeFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92926132A5CC45800BB5412 /* TimeFixture.swift */; };
 		E92926162A5CE40300BB5412 /* SimilarPriceRangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92926152A5CE40300BB5412 /* SimilarPriceRangeView.swift */; };
+		E996053F2A676D5000ED28B4 /* stockFailure.json in Resources */ = {isa = PBXBuildFile; fileRef = E996053E2A676D5000ED28B4 /* stockFailure.json */; };
+		E99605402A676D5000ED28B4 /* stockFailure.json in Resources */ = {isa = PBXBuildFile; fileRef = E996053E2A676D5000ED28B4 /* stockFailure.json */; };
+		E99605452A677C6900ED28B4 /* StockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99605442A677C6900ED28B4 /* StockTests.swift */; };
+		E99605462A677C6900ED28B4 /* StockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99605442A677C6900ED28B4 /* StockTests.swift */; };
+		E996054B2A677F1200ED28B4 /* stockSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = E996054A2A677F1200ED28B4 /* stockSuccess.json */; };
+		E996054C2A677F1200ED28B4 /* stockSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = E996054A2A677F1200ED28B4 /* stockSuccess.json */; };
+		E996054E2A67859400ED28B4 /* stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E996054D2A67859400ED28B4 /* stock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +64,10 @@
 		E929260D2A5C9F6900BB5412 /* StockDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StockDetailsView.swift; path = ../../../../../Downloads/StockDetailsView.swift; sourceTree = "<group>"; };
 		E92926132A5CC45800BB5412 /* TimeFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFixture.swift; sourceTree = "<group>"; };
 		E92926152A5CE40300BB5412 /* SimilarPriceRangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarPriceRangeView.swift; sourceTree = "<group>"; };
+		E996053E2A676D5000ED28B4 /* stockFailure.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stockFailure.json; sourceTree = "<group>"; };
+		E99605442A677C6900ED28B4 /* StockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTests.swift; sourceTree = "<group>"; };
+		E996054A2A677F1200ED28B4 /* stockSuccess.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stockSuccess.json; sourceTree = "<group>"; };
+		E996054D2A67859400ED28B4 /* stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +140,7 @@
 		E92925DF2A5C57AC00BB5412 /* CashAppStocksTests */ = {
 			isa = PBXGroup;
 			children = (
+				E996053D2A676CEF00ED28B4 /* MockData */,
 				E92925E02A5C57AC00BB5412 /* CashAppStocksTests.swift */,
 			);
 			path = CashAppStocksTests;
@@ -159,8 +171,19 @@
 				E929260D2A5C9F6900BB5412 /* StockDetailsView.swift */,
 				E92926132A5CC45800BB5412 /* TimeFixture.swift */,
 				E92926152A5CE40300BB5412 /* SimilarPriceRangeView.swift */,
+				E996054D2A67859400ED28B4 /* stock.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		E996053D2A676CEF00ED28B4 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				E996054A2A677F1200ED28B4 /* stockSuccess.json */,
+				E996053E2A676D5000ED28B4 /* stockFailure.json */,
+				E99605442A677C6900ED28B4 /* StockTests.swift */,
+			);
+			path = MockData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +299,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E996054B2A677F1200ED28B4 /* stockSuccess.json in Resources */,
+				E996053F2A676D5000ED28B4 /* stockFailure.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +308,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E996054C2A677F1200ED28B4 /* stockSuccess.json in Resources */,
+				E99605402A676D5000ED28B4 /* stockFailure.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +328,7 @@
 				E92926012A5C60B300BB5412 /* StockResponse.swift in Sources */,
 				E92926142A5CC45800BB5412 /* TimeFixture.swift in Sources */,
 				E92925FF2A5C5C0500BB5412 /* StockViewModel.swift in Sources */,
+				E996054E2A67859400ED28B4 /* stock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E99605452A677C6900ED28B4 /* StockTests.swift in Sources */,
 				E92925E12A5C57AC00BB5412 /* CashAppStocksTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E92925ED2A5C57AC00BB5412 /* CashAppStocksUITestsLaunchTests.swift in Sources */,
+				E99605462A677C6900ED28B4 /* StockTests.swift in Sources */,
 				E92925EB2A5C57AC00BB5412 /* CashAppStocksUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
