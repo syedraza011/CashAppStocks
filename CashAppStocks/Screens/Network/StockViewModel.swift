@@ -27,15 +27,19 @@ class StocksViewModel: ObservableObject {
                 let myStocks: StockResponse = try await self.service.fetchStocks()
                 if (myStocks.stocks.isEmpty) {throw APIError.emptyData}
                 self.fullStocks = myStocks
-           
+                state = .loaded
                 
             } catch {
                 if let error = error as? APIError {
                     print(error.description)
+                    state = .error
                     throw error
+                  
                 } else {
                     print(error)
+                    state = .error
                     throw error
+                   
                 }
             }
         }
