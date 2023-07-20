@@ -59,6 +59,7 @@ struct ContentView: View {
                                     .font(.subheadline)
                                     .foregroundColor(.white)
                                     .padding(.horizontal)
+                                    .bold()
                             }
 .frame(width: 210, height: 130)
                             
@@ -72,7 +73,10 @@ struct ContentView: View {
                                 Text("\(stock.name)")
                                     .font(.system(size: 14))
                                     .foregroundColor(.white)
+                            
+                               
                             }
+                            
                             .frame(width: 160, height: 100)
                         }
                         .padding(.vertical, 10)
