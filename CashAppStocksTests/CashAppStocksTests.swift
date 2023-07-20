@@ -5,49 +5,29 @@
 //  Created by Syed Raza on 7/10/23.
 //
 
+
+
 import XCTest
 @testable import CashAppStocks
+import Combine
+
+// temprary files name which will be passed to the function when called for data
+enum FileName: String {
+    case realDataFile, missingDataFile, emptyDataFile
+}
 
 final class CashAppStocksTests: XCTestCase {
-
+    
+    var cancellables: Set<AnyCancellable> = []
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-
+    
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        cancellables = []
     }
-
-    func test_getPostsAsyncAwait_should_succeed() async throws {
-        let viewModel = StockViewModel(service: MockPostsService(fileName: .stockSuccess))
-        
-        // Expectation: The sectionPosts should be populated correctly
-        // Set up any necessary mock objects or data
-        let expectation = XCTestExpectation(description: "Posts fetched successfully")
-        
-        // Call the function being tested
-        await viewModel.getPostsAsyncAwait()
-        
-        // Assert the expected results
-        viewModel.$sectionPosts
-            .dropFirst() // Skip initial value
-            .sink { sectionPosts in
-                // Perform your assertions on the sectionPosts here
-                XCTAssertFalse(sectionPosts.isEmpty, "sectionPosts should not be empty")
-                let firstSection = sectionPosts.first!
-                XCTAssertEqual(firstSection.posts.first!.title, "sunt aut facere repellat provident occaecati excepturi optio reprehenderit")
-                // Fulfill the expectation
-                expectation.fulfill()
-            }
-            .store(in: &cancellables)
-        
-        // Wait for the expectation to be fuzMoclfilled
-        await fulfillment(of: [expectation], timeout: 5)
-    }
-    
-    
-    
-    
     
     func testExample() throws {
         // This is an example of a functional test case.
@@ -56,19 +36,100 @@ final class CashAppStocksTests: XCTestCase {
         // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
     }
-
+    
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func test_Should_Pass_for_Real_Data() async throws {
+        let viewModel = StocksViewModel(service: MockStocksService(fileName: .realDataFile))
+        let exp = XCTestExpectation(description: "Expecting to succeed")
 
-}
-class MockStockService: StockServiceProtocol {
-    let fileName: FileName
-    init(fileName: FileName) {
-        self.fileName = fileName
+        await viewModel.getStocks()
+
+        viewModel.$fullStocks
+            .sink { stockResponse in
+                XCTestExpectation(description: "Stocks fetched Sucessfully")
+                exp.fulfill()
+            }
+            .store(in: &cancellables)
+
+        wait(for: [exp], timeout: 5.0)
     }
-    private fetchStocksusingAsyncAwait () async throws - > []
+
+
+    func test_Should_Fail_for_False_Data() async throws {
+        let mockFailureService = MockStocksService(fileName: .missingDataFile)
+        let viewModel = StocksViewModel(service: mockFailureService)
+        let exp = XCTestExpectation(description: "Expecting to get no data")
+
+        await viewModel.getStocks()
+
+        viewModel.$fullStocks
+            .sink { stockResponse in
+                XCTAssertTrue(stockResponse.stocks.isEmpty)
+                exp.fulfill()
+            }
+            .store(in: &cancellables)
+
+        wait(for: [exp], timeout: 5.0)
+    }
+
+
+ 
+    func test_Should_Pass_for_NO_Data() async throws {
+        let mockFailureService = MockStocksService(fileName: .emptyDataFile)
+        let viewModel = StocksViewModel(service: mockFailureService)
+        let exp = XCTestExpectation(description: "Expecting to get no data")
+        
+        await viewModel.getStocks()
+        
+        viewModel.$fullStocks
+            .sink { stock in
+                print(stock.stocks)
+                XCTAssertTrue(stock.stocks.isEmpty)
+                exp.fulfill()
+            }
+            .store(in: &cancellables)
+        wait(for: [exp], timeout: 5.0)
+//        await fulfillment(of: [exp], timeout: 5.0)
+    }
+  
 }
+    
+
+    
+    // this class is to called MockService so that filesof data could bea accessed to tests
+    class MockStocksService: StocksServiceProtocol {
+        
+        let fileName: FileName
+        
+        init(fileName: FileName) {
+            self.fileName = fileName
+        }
+        
+        func load(_ file: String) -> URL? {
+            return Bundle(for: type(of: self)).url(forResource: file, withExtension: "json")
+        }
+        
+        func fetchStocks() async throws -> StockResponse {
+            
+           
+            guard let url = load(fileName.rawValue) else { throw APIError.invalidUrl}
+            
+            let data = try! Data(contentsOf: url)
+            do {
+                let result = try JSONDecoder().decode(StockResponse.self, from: data)
+                return result
+            } catch {
+                throw APIError.emptyData
+            }
+            
+            
+        }
+    }
+
+

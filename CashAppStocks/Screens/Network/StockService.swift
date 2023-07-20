@@ -4,39 +4,60 @@
 //
 //  Created by Syed Raza on 7/10/23.
 //
-
 import Foundation
 import Combine
-import Foundation
 
 enum APIError: Error {
-    case invalidURL(String)
+    case invalidUrl
     case invalidResponse
+    case emptyData
+    case serviceUnavailable
     case decodingError
+    
+    var description: String {
+        switch self {
+        case .invalidUrl:
+            return "invalid url"
+        case .invalidResponse:
+            return "invalid response"
+        case .emptyData:
+            return "empty data"
+        case .serviceUnavailable:
+            return "service unavailable"
+        case .decodingError:
+            return "decoding error"
+        }
+    }
 }
 
-class StockService {
-    
+
+
+protocol StocksServiceProtocol {
+    func fetchStocks() async throws -> StockResponse
+}
+
+
+class StocksService: StocksServiceProtocol {
     struct Constants {
         static let baseURL = "https://storage.googleapis.com/cash-homework/cash-stocks-api/portfolio.json"
-//        static let baseURL = "https://storage.googleapis.com/cash-homework/cash-stocks-api/portfolio_empty.json"
     }
 
-    func fetchStocks() async throws -> [Stock] {
+    func fetchStocks() async throws ->  StockResponse{
         guard let url = URL(string: Constants.baseURL) else {
-            throw APIError.invalidURL("Invalid URL")
+            throw APIError.invalidUrl
         }
-        
-    do {
+
+        do {
             let (data, response) = try await URLSession.shared.data(from: url)
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
                 throw APIError.invalidResponse
             }
-            
+
             let result = try JSONDecoder().decode(StockResponse.self, from: data)
-            return result.stocks
+            return result
         } catch {
             throw APIError.decodingError
         }
-    }
-}
+
+    } // ending fetchStocks
+} //ending stock service

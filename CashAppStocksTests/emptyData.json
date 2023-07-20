@@ -1,0 +1,9 @@
+//
+//  emptyData.swift
+//  CashAppStocksTests
+//
+//  Created by Syed Raza on 7/14/23.
+//
+{
+    "stocks": []
+}

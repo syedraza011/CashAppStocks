@@ -10,8 +10,8 @@ import Foundation
 struct StockResponse: Decodable {
     let stocks: [Stock]
 }
-struct Stock: Decodable, Identifiable{
-    let id = UUID()
+struct Stock: Decodable, Hashable{
+//    let id = UUID()
     let ticker: String
     let name: String
     let currency: String
