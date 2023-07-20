@@ -54,6 +54,14 @@ struct ContentView: View {
                 ForEach(viewModel.fullStocks.stocks, id: \.self) { stock in
                     VStack {
                         HStack {
+                           VStack {
+                                Text(formatPriceCents(stock.current_price_cents))
+                                    .font(.subheadline)
+                                    .foregroundColor(.white)
+                                    .padding(.horizontal)
+                            }
+.frame(width: 210, height: 130)
+                            
                             VStack {
                                 Text("\(stock.ticker)")
                                     .font(.system(size: 25))
@@ -66,36 +74,22 @@ struct ContentView: View {
                                     .foregroundColor(.white)
                             }
                             .frame(width: 160, height: 100)
-                            
-                            VStack {
-                                Text(formatPriceCents(stock.current_price_cents))
-                                    .font(.subheadline)
-                                    .foregroundColor(.white)
-                                    .padding(.horizontal)
-                                
-                                Text(formatTimestamp(stock.current_price_cents))
-                                    .font(.subheadline)
-                                    .foregroundColor(.white)
-                                    .padding(.horizontal)
-                                
-                            }
-                            .frame(width: 210, height: 130)
-                            
                         }
                         .padding(.vertical, 10)
+                        
                     }
-                    .frame(width: 370, height: 120)
-                    .background(Color.black)
+                    .frame(width: 390, height: 120)
+                    .background(Color.blue)
                     .cornerRadius(16)
                     .overlay(
                         RoundedRectangle(cornerRadius: 16)
                             .stroke(Color.white, lineWidth: 3)
                     )
-                    .padding(.vertical, 20)
+                    .padding(.vertical, 2)
                 }
             } .navigationTitle("New York Stocks")
              
-                .foregroundColor(.green)
+               
         }
     }
     func formatTimestamp(_ timestamp: Int) -> String {
