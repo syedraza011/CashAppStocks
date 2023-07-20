@@ -52,7 +52,7 @@ final class CashAppStocksTests: XCTestCase {
 
         viewModel.$fullStocks
             .sink { stockResponse in
-                XCTestExpectation(description: "Stocks fetched Sucessfully")
+               XCTAssertFalse(stockResponse.stocks.isEmpty," Stocks should not be empty here")
                 exp.fulfill()
             }
             .store(in: &cancellables)

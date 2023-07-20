@@ -23,6 +23,7 @@
 		E99605672A69A2AA00ED28B4 /* emptyData.json in Resources */ = {isa = PBXBuildFile; fileRef = E99605642A69A2A900ED28B4 /* emptyData.json */; };
 		E99605682A69A2AA00ED28B4 /* stockFailure.json in Resources */ = {isa = PBXBuildFile; fileRef = E99605652A69A2AA00ED28B4 /* stockFailure.json */; };
 		E99605692A69A2AA00ED28B4 /* stockSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = E99605662A69A2AA00ED28B4 /* stockSuccess.json */; };
+		E996056D2A69FC0400ED28B4 /* StockDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E996056C2A69FC0400ED28B4 /* StockDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		E99605642A69A2A900ED28B4 /* emptyData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emptyData.json; sourceTree = "<group>"; };
 		E99605652A69A2AA00ED28B4 /* stockFailure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stockFailure.json; sourceTree = "<group>"; };
 		E99605662A69A2AA00ED28B4 /* stockSuccess.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stockSuccess.json; sourceTree = "<group>"; };
+		E996056C2A69FC0400ED28B4 /* StockDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				E92925D12A5C57A800BB5412 /* ContentView.swift */,
+				E996056C2A69FC0400ED28B4 /* StockDetails.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				E99605512A678E5900ED28B4 /* AsyncState.swift in Sources */,
 				E92925D22A5C57A800BB5412 /* ContentView.swift in Sources */,
 				E92925D02A5C57A800BB5412 /* CashAppStocksApp.swift in Sources */,
+				E996056D2A69FC0400ED28B4 /* StockDetails.swift in Sources */,
 				E92926162A5CE40300BB5412 /* SimilarPriceRangeView.swift in Sources */,
 				E92925FD2A5C5B0000BB5412 /* StockService.swift in Sources */,
 				E92926012A5C60B300BB5412 /* StockResponse.swift in Sources */,
