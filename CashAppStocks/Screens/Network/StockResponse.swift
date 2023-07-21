@@ -11,7 +11,7 @@ struct StockResponse: Decodable {
     let stocks: [Stock]
 }
 struct Stock: Decodable, Hashable{
-//    let id = UUID()
+    let id = UUID()
     let ticker: String
     let name: String
     let currency: String

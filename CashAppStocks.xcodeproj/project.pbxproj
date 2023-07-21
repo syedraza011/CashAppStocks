@@ -17,13 +17,13 @@
 		E92925FD2A5C5B0000BB5412 /* StockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92925FC2A5C5B0000BB5412 /* StockService.swift */; };
 		E92925FF2A5C5C0500BB5412 /* StockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92925FE2A5C5C0500BB5412 /* StockViewModel.swift */; };
 		E92926012A5C60B300BB5412 /* StockResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92926002A5C60B300BB5412 /* StockResponse.swift */; };
-		E92926142A5CC45800BB5412 /* TimeFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92926132A5CC45800BB5412 /* TimeFixture.swift */; };
-		E92926162A5CE40300BB5412 /* SimilarPriceRangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92926152A5CE40300BB5412 /* SimilarPriceRangeView.swift */; };
 		E99605512A678E5900ED28B4 /* AsyncState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99605502A678E5900ED28B4 /* AsyncState.swift */; };
 		E99605672A69A2AA00ED28B4 /* emptyData.json in Resources */ = {isa = PBXBuildFile; fileRef = E99605642A69A2A900ED28B4 /* emptyData.json */; };
 		E99605682A69A2AA00ED28B4 /* stockFailure.json in Resources */ = {isa = PBXBuildFile; fileRef = E99605652A69A2AA00ED28B4 /* stockFailure.json */; };
 		E99605692A69A2AA00ED28B4 /* stockSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = E99605662A69A2AA00ED28B4 /* stockSuccess.json */; };
 		E996056D2A69FC0400ED28B4 /* StockDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E996056C2A69FC0400ED28B4 /* StockDetails.swift */; };
+		E996056F2A6A13F900ED28B4 /* TimeFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E996056E2A6A13F900ED28B4 /* TimeFixture.swift */; };
+		E99605712A6A170900ED28B4 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99605702A6A170900ED28B4 /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,13 +58,13 @@
 		E92925FE2A5C5C0500BB5412 /* StockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewModel.swift; sourceTree = "<group>"; };
 		E92926002A5C60B300BB5412 /* StockResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockResponse.swift; sourceTree = "<group>"; };
 		E92926042A5C74C900BB5412 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E92926132A5CC45800BB5412 /* TimeFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFixture.swift; sourceTree = "<group>"; };
-		E92926152A5CE40300BB5412 /* SimilarPriceRangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarPriceRangeView.swift; sourceTree = "<group>"; };
 		E99605502A678E5900ED28B4 /* AsyncState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncState.swift; sourceTree = "<group>"; };
 		E99605642A69A2A900ED28B4 /* emptyData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emptyData.json; sourceTree = "<group>"; };
 		E99605652A69A2AA00ED28B4 /* stockFailure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stockFailure.json; sourceTree = "<group>"; };
 		E99605662A69A2AA00ED28B4 /* stockSuccess.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stockSuccess.json; sourceTree = "<group>"; };
 		E996056C2A69FC0400ED28B4 /* StockDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetails.swift; sourceTree = "<group>"; };
+		E996056E2A6A13F900ED28B4 /* TimeFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFixture.swift; sourceTree = "<group>"; };
+		E99605702A6A170900ED28B4 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +157,7 @@
 			children = (
 				E92925D12A5C57A800BB5412 /* ContentView.swift */,
 				E996056C2A69FC0400ED28B4 /* StockDetails.swift */,
+				E996056E2A6A13F900ED28B4 /* TimeFixture.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -167,8 +168,7 @@
 				E92925FC2A5C5B0000BB5412 /* StockService.swift */,
 				E92925FE2A5C5C0500BB5412 /* StockViewModel.swift */,
 				E92926002A5C60B300BB5412 /* StockResponse.swift */,
-				E92926132A5CC45800BB5412 /* TimeFixture.swift */,
-				E92926152A5CE40300BB5412 /* SimilarPriceRangeView.swift */,
+				E99605702A6A170900ED28B4 /* SearchBar.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -326,12 +326,12 @@
 			files = (
 				E99605512A678E5900ED28B4 /* AsyncState.swift in Sources */,
 				E92925D22A5C57A800BB5412 /* ContentView.swift in Sources */,
+				E996056F2A6A13F900ED28B4 /* TimeFixture.swift in Sources */,
 				E92925D02A5C57A800BB5412 /* CashAppStocksApp.swift in Sources */,
 				E996056D2A69FC0400ED28B4 /* StockDetails.swift in Sources */,
-				E92926162A5CE40300BB5412 /* SimilarPriceRangeView.swift in Sources */,
+				E99605712A6A170900ED28B4 /* SearchBar.swift in Sources */,
 				E92925FD2A5C5B0000BB5412 /* StockService.swift in Sources */,
 				E92926012A5C60B300BB5412 /* StockResponse.swift in Sources */,
-				E92926142A5CC45800BB5412 /* TimeFixture.swift in Sources */,
 				E92925FF2A5C5C0500BB5412 /* StockViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
