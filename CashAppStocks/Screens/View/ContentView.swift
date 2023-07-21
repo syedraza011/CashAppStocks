@@ -67,57 +67,79 @@ struct ContentView: View {
         }
         
         let filteredStocks = sortedStocks.filter { searchText.isEmpty ? true : $0.name.localizedCaseInsensitiveContains(searchText) }
-        
         return ScrollView {
-            VStack {
-                Text("New York Stocks")
-                    .font(.system(size: 35))
-                    .bold()
-                    .foregroundColor(.white)
-                    .padding(.top, 20)
-                
-                ForEach(filteredStocks, id: \.self) { stock in
-                    NavigationLink(destination: StockDetails(stocks: [stock])) {
-                        VStack {
-                            HStack {
+                VStack {
+                    Text("New York Stocks")
+                        .font(.system(size: 35))
+                        .bold()
+                        .foregroundColor(.white)
+                        .padding(.top, 20)
+
+                    ForEach(filteredStocks, id: \.self) { stock in
+                        NavigationLink(destination: StockDetails(stocks: [stock])) {
+                            VStack {
                                 VStack {
-                                    Text(formatPriceCents(stock.current_price_cents))
-                                        .font(.subheadline)
-                                        .foregroundColor(.white)
-                                        .padding(.horizontal)
-                                        .bold()
+                                    HStack {
+                                        VStack {
+                                            Text(formatPriceCents(stock.current_price_cents))
+                                                .font(.subheadline)
+                                                .foregroundColor(.white)
+                                                .padding(.horizontal)
+                                                .bold()
+                                        }
+                                        .frame(width: 210, height: 130)
+
+                                        VStack {
+                                            Text("\(stock.ticker)")
+                                                .font(.system(size: 25))
+                                                .bold()
+                                                .foregroundColor(.white)
+                                                .padding(.bottom, 5)
+
+                                            Text("\(stock.name)")
+                                                .font(.system(size: 14))
+                                                .foregroundColor(.white)
+
+                                        }
+                                        .frame(width: 160, height: 100)
+                                    }
+                                    .padding(.vertical, 5)
                                 }
-                                .frame(width: 210, height: 130)
-                                
-                                VStack {
-                                    Text("\(stock.ticker)")
-                                        .font(.system(size: 25))
-                                        .bold()
-                                        .foregroundColor(.white)
-                                        .padding(.bottom, 5)
-                                    
-                                    Text("\(stock.name)")
+                                .frame(width: 390, height: 120)
+                                .background(Color.blue)
+                                .cornerRadius(16)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 16)
+                                        .stroke(Color.white, lineWidth: 3)
+                                )
+                                .padding(.vertical, 1)
+
+                                if let quantity = stock.quantity, quantity > 0 {
+                                    Text("Available to Buy")
                                         .font(.system(size: 14))
                                         .foregroundColor(.white)
+                                        .padding(.horizontal, 8)
+                                        .padding(.vertical, 4)
+                                        .background(Color.green)
+                                        .cornerRadius(10)
+                                        .offset(x: -5, y: -40) // Adjust the offset to position the banner inside the card
+                                } else {
+                                    Text("Sold Out")
+                                        .font(.system(size: 14))
+                                        .foregroundColor(.white)
+                                        .padding(.horizontal, 8)
+                                        .padding(.vertical, 4)
+                                        .background(Color.red)
+                                        .cornerRadius(10)
+                                        .offset(x: 00, y: -40) // Adjust the offset to position the banner inside the card
                                 }
-                                .frame(width: 160, height: 100)
                             }
-                            .padding(.vertical, 10)
                         }
-                        .frame(width: 390, height: 120)
-                        .background(Color.blue)
-                        .cornerRadius(16)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 16)
-                                .stroke(Color.white, lineWidth: 3)
-                        )
-                        .padding(.vertical, 2)
                     }
                 }
             }
+            .navigationTitle("New York Stocks")
         }
-        .navigationTitle("New York Stocks")
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {
