@@ -39,29 +39,5 @@ class StocksViewModel: ObservableObject {
         }
     }
     
-// 
-//        
-//        func getRelatedItemsFromParent(parentStock: Stock) -> [realtedStockData] {
-//            var relatedItems: Set<Int> = []
-//            for prices in parentStock.current_price_cents {
-//                guard let prices = prices else {
-//                    continue
-//                }
-//                for price in prices {
-//                    relatedItems.insert(price)
-//                }
-//            }
-//            relatedItems.remove(parentStock.id)
-//            
-//            var relatedStockData: [StockData] = []
-//            for relatedItem in relatedItems {
-//                if let item = try? await self.service.fetchStocks(relatedItem) {
-//                    // Assuming StockData is the right type here, you may need to adjust this accordingly
-//                    relatedStockData.append(StockData(rawData: item))
-//                }
-//            }
-//            return relatedStockData
-//        }
-    
 
 }
