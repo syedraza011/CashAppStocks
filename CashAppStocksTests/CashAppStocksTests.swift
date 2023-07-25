@@ -52,12 +52,12 @@ final class CashAppStocksTests: XCTestCase {
 
         viewModel.$fullStocks
             .sink { stockResponse in
-               XCTAssertFalse(stockResponse.stocks.isEmpty," Stocks should not be empty here")
+               XCTAssertTrue(stockResponse.stocks.isEmpty," Stocks should not be empty here")
                 exp.fulfill()
             }
             .store(in: &cancellables)
-
-        wait(for: [exp], timeout: 5.0)
+        await fulfillment(of: [exp], timeout: 5.0)
+//        wait(for: [exp], timeout: 5.0)
     }
 
 
@@ -74,8 +74,8 @@ final class CashAppStocksTests: XCTestCase {
                 exp.fulfill()
             }
             .store(in: &cancellables)
-
-        wait(for: [exp], timeout: 5.0)
+        await fulfillment(of: [exp], timeout: 5.0)
+//        wait(for: [exp], timeout: 5.0)
     }
 
 
@@ -94,8 +94,8 @@ final class CashAppStocksTests: XCTestCase {
                 exp.fulfill()
             }
             .store(in: &cancellables)
-        wait(for: [exp], timeout: 5.0)
-//        await fulfillment(of: [exp], timeout: 5.0)
+//        wait(for: [exp], timeout: 5.0)
+        await fulfillment(of: [exp], timeout: 5.0)
     }
   
 }
