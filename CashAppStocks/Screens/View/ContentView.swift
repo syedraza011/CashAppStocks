@@ -3,8 +3,6 @@
 //  CashAppStocks
 //
 //  Created by Syed Raza on 7/10/23.
-//import SwiftUI
-//import Combine
 
 import SwiftUI
 import Combine
@@ -20,7 +18,7 @@ struct ContentView: View {
     @ObservedObject var viewModel = StocksViewModel()
     @State private var sortOption: SortOption = .name // Default sort option
     @State private var searchText = ""
-    
+
     var body: some View {
         NavigationView {
             VStack {
@@ -32,9 +30,9 @@ struct ContentView: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .padding(.horizontal)
-                
+
                 SearchBar(text: $searchText) // Add the search bar
-                
+
                 switch viewModel.state {
                 case .initial:
                     Text("Displaying the Stocks")
@@ -52,7 +50,7 @@ struct ContentView: View {
             self.viewModel.getStocks()
         }
     }
-    
+
     private func stockListView(stocks: [Stock]) -> some View {
         let sortedStocks: [Stock]
         switch sortOption {
@@ -65,7 +63,7 @@ struct ContentView: View {
         case .current_price_timestamp:
             sortedStocks = stocks.sorted { $0.current_price_timestamp < $1.current_price_timestamp }
         }
-        
+
         let filteredStocks = sortedStocks.filter { searchText.isEmpty ? true : $0.name.localizedCaseInsensitiveContains(searchText) }
         return ScrollView {
                 VStack {
@@ -147,3 +145,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+

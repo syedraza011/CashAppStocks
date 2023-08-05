@@ -12,6 +12,7 @@ import Combine
 class StocksViewModel: ObservableObject {
     @Published var fullStocks = StockResponse(stocks: [Stock]())
     @Published var state: AsyncState = .initial
+    
     let service: StocksServiceProtocol
     
     init(service: StocksServiceProtocol = StocksService()) {
@@ -41,3 +42,28 @@ class StocksViewModel: ObservableObject {
     
 
 }
+
+//class StockViewModel: ObservableObject {
+//@Published var allStock = StockResponse(stocks: [Stock]())
+//    @Published state: AsyncState = .initial
+//    let service = StocksServiceProtocol()
+//    
+//    init (service: StocksServiceProtocol = StocksService()){
+//        self.service = service
+//    }
+//    @MainActor func getStocks(){
+//        state = .loading
+//        Task{
+//            do{
+//                let availableStocks: StockResponse = try await service.fetchStocks()
+//                if availableStocks.stocks.isEmpty{
+//                    throw APIError.emptyData
+//                }
+//                self.$allStock = availableStocks
+//                state = .loaded
+//            }
+//        }
+//    }
+//    
+//    
+//}
