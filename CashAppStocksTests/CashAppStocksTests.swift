@@ -57,7 +57,7 @@ final class CashAppStocksTests: XCTestCase {
             }
             .store(in: &cancellables)
         await fulfillment(of: [exp], timeout: 5.0)
-//        wait(for: [exp], timeout: 5.0)
+    //        wait(for: [exp], timeout: 5.0)
     }
 
 
@@ -75,7 +75,6 @@ final class CashAppStocksTests: XCTestCase {
             }
             .store(in: &cancellables)
         await fulfillment(of: [exp], timeout: 5.0)
-//        wait(for: [exp], timeout: 5.0)
     }
 
 
@@ -94,7 +93,6 @@ final class CashAppStocksTests: XCTestCase {
                 exp.fulfill()
             }
             .store(in: &cancellables)
-//        wait(for: [exp], timeout: 5.0)
         await fulfillment(of: [exp], timeout: 5.0)
     }
   
@@ -104,27 +102,20 @@ final class CashAppStocksTests: XCTestCase {
     
     // this class is to called MockService so that filesof data could bea accessed to tests
     class MockStocksService: StocksServiceProtocol {
-        
         let fileName: FileName
         
         init(fileName: FileName) {
             self.fileName = fileName
         }
-        
         func load(_ file: String) -> URL? {
             return Bundle(for: type(of: self)).url(forResource: file, withExtension: "json")
         }
-        
         func fetchStocks() async throws -> StockResponse {
-            
-           
             guard let url = load(fileName.rawValue) else { throw APIError.invalidUrl}
-            
             let data = try! Data(contentsOf: url)
             do {
-                let result = try JSONDecoder().decode(StockResponse.self, from: data)
-                return result
-            } catch {
+               return try JSONDecoder().decode(StockResponse.self, from: data)
+               } catch {
                 throw APIError.emptyData
             }
             
@@ -133,3 +124,21 @@ final class CashAppStocksTests: XCTestCase {
     }
 
 
+//class MockService: SchoolserviceProtocol {
+//    let fileName = FileName
+//    init(fileName: FileName){
+//        self.fileName = fileName
+//    }
+//    func load (_ file, String) -> URL? {
+//        return Bundle(for: type(of: self)).url(forResource: file, withExtension: "json")
+//    }
+//    func fetchSchools () async throws -> schoolResponse {
+//        guard let url = load (fileName.rawValue) else { throw APIError.invalidUrl}
+//        let data = try! Data(contentOf: url)
+//    }
+//    do {
+//        return try JSONDecoder().decode(schoolResponse.self, from: data)
+//    }catch {
+//        throw APIError.emptyData
+//    }
+//}

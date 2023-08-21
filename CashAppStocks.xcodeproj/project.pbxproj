@@ -18,6 +18,7 @@
 		E92925FF2A5C5C0500BB5412 /* StockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92925FE2A5C5C0500BB5412 /* StockViewModel.swift */; };
 		E92926012A5C60B300BB5412 /* StockResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92926002A5C60B300BB5412 /* StockResponse.swift */; };
 		E971CC442A788AE50081D545 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = E971CC432A788AE50081D545 /* SwiftUICharts */; };
+		E984289F2A9325F000176221 /* Expected_View.png in Resources */ = {isa = PBXBuildFile; fileRef = E984289E2A9325F000176221 /* Expected_View.png */; };
 		E99605512A678E5900ED28B4 /* AsyncState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99605502A678E5900ED28B4 /* AsyncState.swift */; };
 		E99605672A69A2AA00ED28B4 /* emptyData.json in Resources */ = {isa = PBXBuildFile; fileRef = E99605642A69A2A900ED28B4 /* emptyData.json */; };
 		E99605682A69A2AA00ED28B4 /* stockFailure.json in Resources */ = {isa = PBXBuildFile; fileRef = E99605652A69A2AA00ED28B4 /* stockFailure.json */; };
@@ -59,6 +60,7 @@
 		E92925FE2A5C5C0500BB5412 /* StockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewModel.swift; sourceTree = "<group>"; };
 		E92926002A5C60B300BB5412 /* StockResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockResponse.swift; sourceTree = "<group>"; };
 		E92926042A5C74C900BB5412 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E984289E2A9325F000176221 /* Expected_View.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Expected_View.png; sourceTree = "<group>"; };
 		E99605502A678E5900ED28B4 /* AsyncState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncState.swift; sourceTree = "<group>"; };
 		E99605642A69A2A900ED28B4 /* emptyData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emptyData.json; sourceTree = "<group>"; };
 		E99605652A69A2AA00ED28B4 /* stockFailure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stockFailure.json; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		E92925CE2A5C57A800BB5412 /* CashAppStocks */ = {
 			isa = PBXGroup;
 			children = (
+				E984289E2A9325F000176221 /* Expected_View.png */,
 				E92926042A5C74C900BB5412 /* Info.plist */,
 				E99605552A684FD500ED28B4 /* Screens */,
 				E92925CF2A5C57A800BB5412 /* CashAppStocksApp.swift */,
@@ -304,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E92925D72A5C57AB00BB5412 /* Preview Assets.xcassets in Resources */,
+				E984289F2A9325F000176221 /* Expected_View.png in Resources */,
 				E92925D42A5C57AB00BB5412 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
