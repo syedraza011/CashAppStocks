@@ -21,7 +21,9 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
+            
             VStack {
+                SearchBar(text: $searchText) // Add the search bar
                 Picker("Sort By", selection: $sortOption) {
                     Text("Name").tag(SortOption.name)
                     Text("Ticker").tag(SortOption.ticker)
@@ -31,7 +33,7 @@ struct ContentView: View {
                 .pickerStyle(SegmentedPickerStyle())
                 .padding(.horizontal)
                 
-                SearchBar(text: $searchText) // Add the search bar
+               
                 
                 switch viewModel.state {
                 case .initial:
@@ -44,8 +46,9 @@ struct ContentView: View {
                     Text("Sorry! Something went wrong..")
                 }
             }
-            .font(.body).bold()
+           
         }
+        .background(.black)
         .onAppear {
             self.viewModel.getStocks()
         }
@@ -81,9 +84,7 @@ struct ContentView: View {
                                     VStack(alignment: .leading) {
                                         Text(stock.ticker)
                                             .font(.headline)
-//                                        Text("\(hold) shares")
-//                                            .font(.subheadline)
-//                                            .opacity(0.9)
+
                                     }
                                     Spacer()
                                     HStack{
@@ -96,49 +97,10 @@ struct ContentView: View {
                                     .cornerRadius(10)
                                 }
                                     Spacer()
-                                    HStack {
-                                        
-                                        Text("\(stock.ticker)")
-                                            .font(.system(size: 25))
-                                            .bold()
-                                            .foregroundColor(.white)
-                                            .padding(.bottom, 5)
-                                        Text(formatPriceCents(stock.current_price_cents))
-                                            .font(.subheadline)
-                                            .foregroundColor(.white)
-                                            .padding(.horizontal)
-                                            .bold()
-                                    }
-                                    .padding(.vertical, 5)
-                                }
-                                .frame(width: 390, height: 120)
-                                .background(Color.blue)
-                                .cornerRadius(16)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 16)
-                                        .stroke(Color.white, lineWidth: 3)
-                                )
+
                                 .padding(.vertical, 1)
                                 
-                                //                                if let quantity = stock.quantity, quantity > 0 {
-                                //                                    Text("Available to Buy")
-                                //                                        .font(.system(size: 14))
-                                //                                        .foregroundColor(.white)
-                                //                                        .padding(.horizontal, 8)
-                                //                                        .padding(.vertical, 4)
-                                //                                        .background(Color.green)
-                                //                                        .cornerRadius(10)
-                                //                                        .offset(x: -5, y: -40) // Adjust the offset to position the banner inside the card
-                                //                                } else {
-                                //                                    Text("Sold Out")
-                                //                                        .font(.system(size: 14))
-                                //                                        .foregroundColor(.white)
-                                //                                        .padding(.horizontal, 8)
-                                //                                        .padding(.vertical, 4)
-                                //                                        .background(Color.red)
-                                //                                        .cornerRadius(10)
-                                //                                        .offset(x: 00, y: -40) // Adjust the offset to position the banner inside the card
-                                //                                }
+                                                          }
                             }
                         }
                     }
