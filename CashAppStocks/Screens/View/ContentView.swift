@@ -68,7 +68,7 @@ struct ContentView: View {
         }
         
         let filteredStocks = sortedStocks.filter { searchText.isEmpty ? true : $0.name.localizedCaseInsensitiveContains(searchText) }
-        return ScrollView {
+        return ScrollView (showsIndicators: false){
             VStack {
                 Text("New York Stocks")
                     .font(.system(size: 35))
@@ -101,11 +101,11 @@ struct ContentView: View {
                                 .padding(.vertical, 1)
                                 
                                                           }
-                            }
+                        }
                         }
                     }
                 }
-            }
+            }.padding(15)
             .navigationTitle("New York Stocks")
         }
     }
