@@ -18,6 +18,7 @@ struct SignOut: View {
                     .foregroundColor(.blue)
             } else {
                 Text("You are signed out.") // Display a message indicating signed out status
+//                SignIn()
                     .font(.title)
                     .foregroundColor(.red)
             }

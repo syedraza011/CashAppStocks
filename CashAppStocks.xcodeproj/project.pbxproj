@@ -28,6 +28,13 @@
 		E99605712A6A170900ED28B4 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99605702A6A170900ED28B4 /* SearchBar.swift */; };
 		E99A8AEF2A9A92A70005303C /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99A8AEE2A9A92A70005303C /* SignIn.swift */; };
 		E99A8AF12A9A92B50005303C /* SignOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99A8AF02A9A92B50005303C /* SignOut.swift */; };
+		E99A8AF32A9A9F5C0005303C /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99A8AF22A9A9F5C0005303C /* DashboardView.swift */; };
+		E99A8B012A9AA21E0005303C /* MenuPageCellsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99A8AF62A9AA21E0005303C /* MenuPageCellsData.swift */; };
+		E99A8B042A9AA21E0005303C /* ProfileCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99A8AFC2A9AA21E0005303C /* ProfileCellView.swift */; };
+		E99A8B052A9AA21E0005303C /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99A8AFD2A9AA21E0005303C /* TopBarView.swift */; };
+		E99A8B062A9AA21E0005303C /* MainMenuContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99A8AFE2A9AA21E0005303C /* MainMenuContentView.swift */; };
+		E99A8B072A9AA21E0005303C /* MenuPageCellsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99A8AFF2A9AA21E0005303C /* MenuPageCellsView.swift */; };
+		E99A8B082A9AA21E0005303C /* SubMenuPageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99A8B002A9AA21E0005303C /* SubMenuPageCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +79,13 @@
 		E99605702A6A170900ED28B4 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		E99A8AEE2A9A92A70005303C /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		E99A8AF02A9A92B50005303C /* SignOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOut.swift; sourceTree = "<group>"; };
+		E99A8AF22A9A9F5C0005303C /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		E99A8AF62A9AA21E0005303C /* MenuPageCellsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuPageCellsData.swift; sourceTree = "<group>"; };
+		E99A8AFC2A9AA21E0005303C /* ProfileCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCellView.swift; sourceTree = "<group>"; };
+		E99A8AFD2A9AA21E0005303C /* TopBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
+		E99A8AFE2A9AA21E0005303C /* MainMenuContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuContentView.swift; sourceTree = "<group>"; };
+		E99A8AFF2A9AA21E0005303C /* MenuPageCellsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuPageCellsView.swift; sourceTree = "<group>"; };
+		E99A8B002A9AA21E0005303C /* SubMenuPageCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubMenuPageCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,10 +218,25 @@
 		E99A8AED2A9A927B0005303C /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				E99A8AF42A9AA21E0005303C /* MenuPage */,
 				E99A8AEE2A9A92A70005303C /* SignIn.swift */,
 				E99A8AF02A9A92B50005303C /* SignOut.swift */,
+				E99A8AF22A9A9F5C0005303C /* DashboardView.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		E99A8AF42A9AA21E0005303C /* MenuPage */ = {
+			isa = PBXGroup;
+			children = (
+				E99A8AF62A9AA21E0005303C /* MenuPageCellsData.swift */,
+				E99A8AFC2A9AA21E0005303C /* ProfileCellView.swift */,
+				E99A8AFD2A9AA21E0005303C /* TopBarView.swift */,
+				E99A8AFE2A9AA21E0005303C /* MainMenuContentView.swift */,
+				E99A8AFF2A9AA21E0005303C /* MenuPageCellsView.swift */,
+				E99A8B002A9AA21E0005303C /* SubMenuPageCellView.swift */,
+			);
+			path = MenuPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,13 +380,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				E99605512A678E5900ED28B4 /* AsyncState.swift in Sources */,
+				E99A8B052A9AA21E0005303C /* TopBarView.swift in Sources */,
+				E99A8B062A9AA21E0005303C /* MainMenuContentView.swift in Sources */,
+				E99A8B082A9AA21E0005303C /* SubMenuPageCellView.swift in Sources */,
 				E92925D22A5C57A800BB5412 /* ContentView.swift in Sources */,
+				E99A8AF32A9A9F5C0005303C /* DashboardView.swift in Sources */,
 				E996056F2A6A13F900ED28B4 /* TimeFixture.swift in Sources */,
 				E99A8AF12A9A92B50005303C /* SignOut.swift in Sources */,
 				E92925D02A5C57A800BB5412 /* CashAppStocksApp.swift in Sources */,
 				E996056D2A69FC0400ED28B4 /* StockDetails.swift in Sources */,
+				E99A8B072A9AA21E0005303C /* MenuPageCellsView.swift in Sources */,
 				E99605712A6A170900ED28B4 /* SearchBar.swift in Sources */,
+				E99A8B012A9AA21E0005303C /* MenuPageCellsData.swift in Sources */,
 				E92925FD2A5C5B0000BB5412 /* StockService.swift in Sources */,
+				E99A8B042A9AA21E0005303C /* ProfileCellView.swift in Sources */,
 				E99A8AEF2A9A92A70005303C /* SignIn.swift in Sources */,
 				E92926012A5C60B300BB5412 /* StockResponse.swift in Sources */,
 				E92925FF2A5C5C0500BB5412 /* StockViewModel.swift in Sources */,
